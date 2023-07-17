@@ -564,7 +564,7 @@ static int show_device_list(struct ltfs_fuse_data *priv)
 
 int main(int argc, char **argv)
 {
-	printf("LTFS_DEBUG: Using LTFS_BSC BRANCH/n");
+	printf("LTFS_DEBUG: Using LTFS_BSC BRANCH\n");
 
 	int ret, i, cmd_args_len;
 	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
@@ -892,6 +892,8 @@ int main(int argc, char **argv)
 	ret = ltfs_fs_init();
 	if (ret)
 		return 1;
+		
+	ltfsmsg(LTFS_INFO, 14105I, "LTFS_DEBUG: END of LTFS_BSC branch");
 
 	/* Invoke the single drive main operations */
 	ret = ltfs_mutex_init(&priv->file_table_lock);
@@ -919,9 +921,6 @@ int main(int argc, char **argv)
 	config_file_free(priv->config);
 	free(priv);
 	fuse_opt_free_args(&args);
-
-
-    ltfsmsg(LTFS_INFO, 14105I, "LTFS_DEBUG: END of LTFS_BSC branch");
 
 	return ret;
 }
