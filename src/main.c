@@ -564,7 +564,7 @@ static int show_device_list(struct ltfs_fuse_data *priv)
 
 int main(int argc, char **argv)
 {
-	ltfsmsg(LTFS_INFO, 14105I, "LTFS_DEBUG: Using LTFS_BSC branch");
+	print("LTFS_DEBUG: Using LTFS_BSC branch");
 	
 	int ret, i, cmd_args_len;
 	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
