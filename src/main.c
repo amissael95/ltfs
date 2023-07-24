@@ -564,7 +564,7 @@ static int show_device_list(struct ltfs_fuse_data *priv)
 
 int main(int argc, char **argv)
 {
-	printf("LTFS_DEBUG: Using LTFS_BSC BRANCH\n");
+	printf("LTFS_DEBUG: Using LTFS_BSC (from SDE)\n");
 
 	int ret, i, cmd_args_len;
 	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
@@ -674,7 +674,7 @@ int main(int argc, char **argv)
 	ltfs_set_log_level(priv->verbose % 100);
 
 	/* LTFS starting */
-	ltfsmsg(LTFS_INFO, 14105I, "LTFS_DEBUG: START of LTFS_BSC branch");
+	ltfsmsg(LTFS_INFO, 14105I, "LTFS_DEBUG: START of LTFS_BSC branch (From LTFS) v1");
 	ltfsmsg(LTFS_INFO, 14000I, PACKAGE_NAME, PACKAGE_VERSION, priv->verbose);
 	ltfsmsg(LTFS_INFO, 14058I, "LTFS Format Specification", LTFS_INDEX_VERSION_STR);
 
